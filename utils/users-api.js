@@ -22,6 +22,7 @@
 //   .catch(err => console.error('error:' + err));
 
   import fetch from 'node-fetch';
+  import dotenv from 'dotenv';
 
   // Get Access Token and Site Name
   const ACCESS_TOKEN = "45473a0b016f8e645e2e9f5b0fc8a4c347095afeda25b4b7244bf956fbfafa07"
