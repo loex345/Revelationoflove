@@ -1,9 +1,16 @@
 const express = require('express')
-
 const app = express();
 
-app.get('/', (req,res) => {
-    res.send('Success!')
-});
+require('dotenv').config()
+require('./config/database')
 
-app.listen(3000, () => console.log('Example app is listening on port 3000'));
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+
+app.use("/api/users", require('./routes/api/users'))
+
+console.log(process.env.DATABASE_URL)
+
+app.listen(PORT, () => console.log(`Example app is listening on port ${PORT}`));
