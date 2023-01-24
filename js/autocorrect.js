@@ -1125,7 +1125,6 @@ function isCorrect(e) {
             let value = correctObj[e.target.id]
             // get the id  to append to
             let myId = document.getElementById(e.target.id).setAttribute("style", "border-width:.5em; border-color:#7FFFD4;")
-            alert("This is correct!")
             console.log("Yes I work", value, myId)
             
         } else if (e.target.value.toLowerCase() !== correctObj[e.target.id]) {
