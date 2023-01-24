@@ -24,8 +24,8 @@
   import fetch from 'node-fetch';
 
   // Get Access Token and Site Name
-  const ACCESS_TOKEN = ""
-  const siteName = ""
+  const ACCESS_TOKEN = "45473a0b016f8e645e2e9f5b0fc8a4c347095afeda25b4b7244bf956fbfafa07"
+  const siteName = "639751350108e54a68d9a1ae"
   
   // Function to get your site by name
   const getSiteByName = async (siteName) => {
