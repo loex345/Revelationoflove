@@ -21,13 +21,36 @@
 //   })
 //   .catch(err => console.error('error:' + err));
 
-import Webflow from 'wefblow-api'
-import dotenv from 'dotenv' // use to get values from .env file
+  import fetch from 'node-fetch';
 
-
-// Get Access Token and Site Object
-const TOKEN = process.env.TOKEN
-const webflow = new Webflow({ token: TOKEN })
-const [site] = await webflow.sites();
-
-console.log(site)
+  // Get Access Token and Site Name
+  const ACCESS_TOKEN = "76ad3fb1c4700d81e171d626ebafb8e6898648d7cffe1b9e0551bdf007ec75be"
+  const siteName = "639751350108e54a68d9a1ae"
+  
+  // Function to get your site by name
+  const getSiteByName = async (siteName) => {
+  
+      const sitesUrl = `https://api.webflow.com/sites/${siteName}/users`
+      const options = {
+          method: 'GET',
+          headers: {
+              accept: 'application/json',
+              authorization: `Bearer ${ACCESS_TOKEN}`
+          }
+      };
+  
+      const sites = await fetch(sitesUrl, options)
+          .then(res => res.json())
+          .catch(err => console.error('error:' + err));
+    //   const site = await sites.find(site => site.name === siteName)
+      return sites
+  
+  }
+  
+  // Run the function and return the Site ID
+  (async () => {
+      const site = await getSiteByName(siteName)
+    //   const siteId = site._id
+      console.log(site)
+  
+  })()
