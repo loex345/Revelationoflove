@@ -25,7 +25,7 @@
 
   // Get Access Token and Site Name
   const ACCESS_TOKEN = ""
-  const siteName = "639751350108e54a68d9a1ae"
+  const siteName = ""
   
   // Function to get your site by name
   const getSiteByName = async (siteName) => {
