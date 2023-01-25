@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 
 /** router.post */
-router.post('/webhooks', usersCtrl.signUp)
+router.post('/', usersCtrl.signUp)
 
 // router.post('/login', usersCtrl.login) ??
 

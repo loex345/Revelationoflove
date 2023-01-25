@@ -17,11 +17,15 @@ module.exports =  {
  * LOGIN FUNCTIONALITY 
  *  -- RETRIEVE USER INFORMATION IF THERE IS A MATCHING EMAIL AND ID(MAYBE) IN DATABASE
  */
+ let count = 0;
 
 function signUp(req, res) {
+    count++
     console.log(req.body)
 } 
 
+console.log(count)
+
 function login(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
 } 
