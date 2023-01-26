@@ -58,7 +58,7 @@ const listWebHooks = async (siteId) => {
         const hook = await listWebHooks(siteId)
         // const newMember = await newMemberHook(siteId)
         // users.users.forEach(user => console.log(user)) 
-        console.log(hook, "hooks",)
+        // console.log(hook, "hooks",)
     } catch (err) {
         console.log(err)
     }
@@ -83,12 +83,13 @@ const createWebhook = async (siteId, payload) => {
 
 // (async () => {
 
-//     const destinationURL = 'https://localhost:3000/api/users'
+//     const ngrok = "https://cee8-2600-6c50-7f-6382-4917-1c3c-6ba0-906a.ngrok.io"
+//     const destinationURL = `${ngrok}/api/users`
 //     const siteId = process.env.SITE_ID;
 
 //     // API request payload
 //     const payload = {
-//         triggerType: 'form_submission',
+//         triggerType: 'memberships_user_account_added',
 //         url: destinationURL
 //     }
 //     const newWebhook = await createWebhook(siteId, payload)
