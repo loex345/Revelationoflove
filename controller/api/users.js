@@ -1,6 +1,4 @@
 const User = require('../../models/users');
-// const jwt = require('jsonwebtoken');
-
 
 module.exports = {
     signUp,
@@ -18,6 +16,7 @@ async function signUp(req, res) {
 
 
 async function login(req, res) {
+    console.log(req.body)
     try {
         const user = await User.findOne({ email: req.body.data.email });
         if (!user) throw new Error('Invalid Credentials');
