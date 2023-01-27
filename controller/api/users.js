@@ -1,31 +1,27 @@
-const User = require('../../models/users')
+const User = require('../../models/users');
 
-
-module.exports =  {
+module.exports = {
     signUp,
     login
 }
-/**  TODO
- * 
- * SIGN-UP FUNCTIONALITY
- *  -- PULL WEBFLOWS API USER INFORMATION TO STORE THE DATA INTO MONGODB DATABASE
- *  -- NEED TO PASS A TOKEN THROUGH AS WELL AS ENCRYPT THE PASSWORD
- * 
- * 
- * 
- * 
- * LOGIN FUNCTIONALITY 
- *  -- RETRIEVE USER INFORMATION IF THERE IS A MATCHING EMAIL AND ID(MAYBE) IN DATABASE
- */
- let count = 0;
 
-function signUp(req, res) {
-    count++
+async function signUp(req, res) {
+    try {
+        const user = await User.create(req.body.data);
+        res.json(user)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+
+async function login(req, res) {
     console.log(req.body)
-} 
-
-console.log(count)
-
-function login(req, res) {
-    // console.log(req.body)
-} 
+    try {
+        const user = await User.findOne({ email: req.body.data.email });
+        if (!user) throw new Error('Invalid Credentials');
+        res.json(user)
+    } catch (e) {
+        res.status(400).json(e);
+    }
+}
