@@ -2,6 +2,7 @@ const express = require('express')
 const logger = require('morgan')
 var http = require('http');
 const app = express();
+const methodOverride = require('method-override');
 
 require('dotenv').config()
 require('./config/database')
@@ -13,6 +14,7 @@ app.use(express.json())
 require('./utils/users-api')
 app.use("/api/users", require('./routes/api/users'))
 app.use(logger('dev'))
+app.use(methodOverride('_method'));
 
 // app.listen(PORT, () => console.log(`Example app is listening on port ${PORT}`));
 
