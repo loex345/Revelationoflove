@@ -15,6 +15,10 @@ const userSchema = new Schema({
         lowercase: true,
         required: true
     },
+    webflow_user_id: {
+        type: String,
+        unique: true,
+    }
 },
     {
         timestamps: true,
