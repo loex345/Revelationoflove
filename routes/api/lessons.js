@@ -4,7 +4,7 @@ const lessonsCtrl = require('../../controller/api/lessons')
 
 /**  POST */
 
-router.post('/:email', lessonsCtrl.saveAnswers);
+router.post('/:email/:series', lessonsCtrl.saveAnswers);
 
 /**  GET */
 
