@@ -18,7 +18,10 @@ const userSchema = new Schema({
     webflow_user_id: {
         type: String,
         unique: true,
-    }
+    },
+    portfolio: [{ type: Schema.Types.ObjectId, ref: 'Portfolio' }]
+
+    
 },
     {
         timestamps: true,
