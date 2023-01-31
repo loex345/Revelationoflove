@@ -11,7 +11,9 @@ module.exports = {
 async function getSeries(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
-        const portfolio = await Portfolio.findOne({ user: user.webflow_user_id });
+        console.log(user)
+        const portfolio = await Portfolio.findOne({ user: user._id });
+        //console portfolio after steps
         const series = portfolio['what-is-truth']
         console.log(series.lesson)
         res.json(series.lesson)
@@ -21,10 +23,11 @@ async function getSeries(req, res) {
 }
 
 async function saveAnswers(req, res) {
+    console.log(req)
     try {
         const user = await User.findOne({ email: req.params.email });
         const portfolio = await Portfolio.findOneAndUpdate(
-            { user: user.webflow_user_id },
+            { user: user._id },
             req.body.data,
             { new: true },
         );

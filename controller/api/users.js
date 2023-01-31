@@ -11,8 +11,8 @@ async function signUp(req, res) {
     try {
         const user = await User.create(req.body.data);
         user.webflow_user_id = req.body._id;
-        const portfolio = await new Portfolio();
-        portfolio.user = user.webflow_user_id;
+        const portfolio = new Portfolio();
+        portfolio.user = user._id
         user.save()
         portfolio.save()
         res.json(user)
