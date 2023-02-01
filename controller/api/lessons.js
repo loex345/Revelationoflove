@@ -14,6 +14,7 @@ async function getSeries(req, res) {
         console.log(user)
         const portfolio = await Portfolio.findOne({ user: user._id });
         //console portfolio after steps
+        console.log("portfolio",portfolio)
         const series = portfolio['what-is-truth']
         console.log(series.lesson)
         res.json(series.lesson)
@@ -23,7 +24,7 @@ async function getSeries(req, res) {
 }
 
 async function saveAnswers(req, res) {
-    console.log(req)
+    console.log("Save answers",req)
     try {
         const user = await User.findOne({ email: req.params.email });
         const portfolio = await Portfolio.findOneAndUpdate(
@@ -32,7 +33,7 @@ async function saveAnswers(req, res) {
             { new: true },
         );
         const series = portfolio['what-is-truth']
-        console.log(series.lesson)
+        console.log("lesson",series.lesson)
         res.json(portfolio)
     } catch (err) {
         res.status(400).json(err)
