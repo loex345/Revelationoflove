@@ -10,10 +10,9 @@ module.exports = {
 async function signUp(req, res) {
     try {
         const user = await User.create(req.body.data);
-        user.webflow_user_id = req.body._id;
         const portfolio = new Portfolio();
+        user.webflow_user_id = req.body._id;
         portfolio.user = user._id
-        portfolio.user = user._id;
         user.save()
         portfolio.save()
         res.json(user)
@@ -42,14 +41,6 @@ async function getUser(req, res) {
         res.status(400).json()
     }
 }
-
-/**
- * 
- * user = User.find({email: req.params.email})
- * 
- * 
- */
-
 
 
 /*------------Helper Function--------*/
