@@ -13,6 +13,7 @@ async function signUp(req, res) {
         user.webflow_user_id = req.body._id;
         const portfolio = new Portfolio();
         portfolio.user = user._id
+        portfolio.user = user._id;
         user.save()
         portfolio.save()
         res.json(user)

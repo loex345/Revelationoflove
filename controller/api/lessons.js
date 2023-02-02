@@ -7,7 +7,6 @@ module.exports = {
 }
 
 
-
 async function getSeries(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
@@ -15,6 +14,8 @@ async function getSeries(req, res) {
         const portfolio = await Portfolio.findOne({ user: user._id });
         //console portfolio after steps
         console.log("portfolio",portfolio)
+
+        console.log(portfolio, "users portfolio")
         const series = portfolio['what-is-truth']
         console.log(series.lesson)
         res.json(series.lesson)
@@ -39,5 +40,4 @@ async function saveAnswers(req, res) {
         res.status(400).json(err)
     }
 }
-
 
