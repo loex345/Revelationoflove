@@ -8,6 +8,7 @@ module.exports = {
 }
 
 async function signUp(req, res) {
+    console.log(req.body)
     try {
         const user = await User.create(req.body.data);
         const portfolio = new Portfolio();
