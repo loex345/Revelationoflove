@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const portfolioSchema = new Schema({
 
     user: { type: Schema.Types.ObjectId, ref: 'User' }, 
-    "what-is-truth": {
+    what_is_truth: {
         lesson: { type: Schema.Types.ObjectId, ref: 'WhatIsTruth' },
         isComplete: Boolean,
     }

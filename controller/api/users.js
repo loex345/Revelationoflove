@@ -8,7 +8,7 @@ module.exports = {
 }
 
 async function signUp(req, res) {
-    console.log(req.body)
+    console.log("Sign-up",req.body)
     try {
         const user = await User.create(req.body.data);
         const portfolio = new Portfolio();
@@ -23,7 +23,7 @@ async function signUp(req, res) {
 }
 
 async function login(req, res) {
-    console.log(req.body)
+    console.log("login",req.body)
     try {
         const user = await User.findOne({ email: req.body.data.email });
         if (!user) throw new Error('Invalid Credentials');

@@ -10,21 +10,20 @@ module.exports = {
 async function getSeries(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
-        console.log(user)
-        const portfolio = await Portfolio.findOne({ user: user._id });
+        console.log(user.portfolio)
+        const portfolio = await Portfolio.findOne({ user: user._id }).populate('what_is_truth', 'lesson').exec();
         //console portfolio after steps
-        console.log("portfolio", portfolio)
-        console.log(portfolio, "users portfolio")
-        const series = portfolio['what-is-truth']
-        console.log(series.lesson)
+        // const series = portfolio
+        console.log(portfolio)
         res.json(series.lesson)
+    
     } catch (err) {
         res.status(400).json(err)
     }
 }
 
 async function saveAnswers(req, res) {
-    console.log("Save answers", req.body)
+    console.log("Save answers", req.body, "email", req.params.email)
     try {
         const user = await User.findOne({ email: req.params.email });
         const portfolio = await Portfolio.updateOne(
