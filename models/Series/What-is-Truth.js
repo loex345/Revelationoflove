@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const whatIsTruthSchema = new Schema({
 
+    portfolio: { type: Schema.Types.ObjectId, ref: 'Portfolio' },
     "1-1-5-A": String,
     "1-1-6-King": String,
     "1-2-1-this": String,
