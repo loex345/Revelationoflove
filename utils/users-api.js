@@ -49,11 +49,28 @@ const createWebhook = async (siteId, payload) => {
     return newWebhook.json()
 }
 
+const createFormHook = async (siteId) => {
+
+    const url = `https://api.webflow.com/sites/${siteId}/webhooks`
+    const options = {
+        method: 'POST',
+        headers: {
+            accept: 'application/json',
+            'content-type': 'application/json',
+            'authorization': `Bearer ${ACCESS_TOKEN}`
+        },
+        body: JSON.stringify({ triggerType: 'form_submission' })
+    };
+    const form = await fetch(url, options)
+    console.log(form, "form hook");
+    return form.json();
+}
+
 // Run the function and return the Site ID
 (async () => {
     const users = await getSiteUsers(siteId)
     const hook = await listWebHooks(siteId)
-    // users.users.forEach(user => console.log(user.data))
+
 })();
 
 
@@ -61,9 +78,9 @@ const createWebhook = async (siteId, payload) => {
 
 // (async () => {
 
-//     const ngrok = "https://e710-2600-387-3-801-00-83.ngrok.io"
-//     const destinationURL = `${ngrok}/api/users`
+//     const ngrok = "https://8353-2600-6c50-7f-6382-ed49-81ef-7525-884.ngrok.io"
 //     const siteId = process.env.SITE_ID;
+// const destinationURL = `${ngrok}/api/users/`
 
 //     // API request payload
 //     const payload = {
@@ -73,3 +90,5 @@ const createWebhook = async (siteId, payload) => {
 //     const newWebhook = await createWebhook(siteId, payload)
 //     console.log(newWebhook)
 // })()
+
+

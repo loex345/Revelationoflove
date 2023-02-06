@@ -1,22 +1,22 @@
 const User = require('../../models/users');
-const Portfolio = require('../../models/portfolio')
 
 module.exports = {
     getSeries,
-    saveAnswers
+    saveAnswers,
+    submitForm,
+    getLessonCount
 }
 
 
 async function getSeries(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
-        console.log(user.portfolio)
-        const portfolio = await Portfolio.findOne({ user: user._id }).populate('what_is_truth', 'lesson').exec();
-        //console portfolio after steps
-        // const series = portfolio
-        console.log(portfolio)
-        res.json(series.lesson)
-    
+        const series = user.what_is_truth;
+        console.log(series[0], "series")
+
+        if (!series) return;
+        res.json(series[0])
+
     } catch (err) {
         res.status(400).json(err)
     }
@@ -26,20 +26,38 @@ async function saveAnswers(req, res) {
     console.log("Save answers", req.body, "email", req.params.email)
     try {
         const user = await User.findOne({ email: req.params.email });
-        const portfolio = await Portfolio.updateOne(
-            { user: user._id },
-            {
-                $set:
-                {
-                    "what-is-truth.lesson": req.body,
-                }
-            }
-        );
+        const series = user.what_is_truth;
 
-        const series = portfolio['what-is-truth']
-        console.log("updated lesson", series.lesson)
+        if (req.body) {
+            if (series.length >= 1) user.what_is_truth.pop();
 
-        res.json(portfolio)
+            user.what_is_truth.push(req.body)
+
+            user.save();
+        }
+        res.json(series[0])
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+
+async function submitForm(req, res) {
+    try {
+        const user = await User.findOne({ email: req.body.data.Email });
+        user.validLessons += 1;
+        user.save();
+        res.json(user.validLessons);
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+
+
+async function getLessonCount(req, res) {
+    try {
+        const user = await User.findOne({ email: req.params.email });
+        console.log(user.validLessons, "valid lesson increment")
+        res.json(user.validLessons);
     } catch (err) {
         res.status(400).json(err)
     }

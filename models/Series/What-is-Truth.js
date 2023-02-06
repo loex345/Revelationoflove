@@ -3,11 +3,10 @@ const Schema = mongoose.Schema;
 
 const whatIsTruthSchema = new Schema({
 
-    portfolio: { type: Schema.Types.ObjectId, ref: 'Portfolio' },
     "1-1-5-A": String,
     "1-1-6-King": String,
     "1-2-1-this": String,
-    "1-2-1.1-end": String,
+    "1-2-1-1-end": String,
     "1-2-2-witness": String,
     "1-2-3-truth": String,
     "1-3-2-Herod-s": String,
