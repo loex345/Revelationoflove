@@ -6,6 +6,9 @@ const lessonsCtrl = require('../../controller/api/lessons')
 
 router.post('/:email/:series', lessonsCtrl.saveAnswers);
 
+router.post('/', lessonsCtrl.submitForm)
+router.get('/:email', lessonsCtrl.getLessonCount)
+
 /**  GET */
 
 router.get('/:email/:series', lessonsCtrl.getSeries);

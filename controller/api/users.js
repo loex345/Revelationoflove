@@ -1,5 +1,4 @@
 const User = require('../../models/users');
-const Portfolio = require('../../models/portfolio')
 
 module.exports = {
     signUp,
@@ -8,14 +7,12 @@ module.exports = {
 }
 
 async function signUp(req, res) {
-    console.log("Sign-up",req.body)
+    console.log("Sign-up", req.body._id)
     try {
         const user = await User.create(req.body.data);
-        const portfolio = new Portfolio();
-        user.webflow_user_id = req.body._id;
-        portfolio.user = user._id
-        user.save()
-        portfolio.save()
+        user.webflow_user_id = await req.body._id;
+        user.validLessons = 1;
+        user.save();
         res.json(user)
     } catch (err) {
         res.status(400).json(err);
@@ -23,7 +20,7 @@ async function signUp(req, res) {
 }
 
 async function login(req, res) {
-    console.log("login",req.body)
+    console.log("login", req.body)
     try {
         const user = await User.findOne({ email: req.body.data.email });
         if (!user) throw new Error('Invalid Credentials');
@@ -36,7 +33,6 @@ async function login(req, res) {
 async function getUser(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email })
-        console.log(user, "user")
         res.json(user)
     } catch (err) {
         res.status(400).json()
