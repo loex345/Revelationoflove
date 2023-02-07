@@ -26,10 +26,6 @@ app.use(logger('dev'))
 
 app.use(methodOverride('_method'));
 
-// app.listen(PORT, () => console.log(`Example app is listening on port ${PORT}`));
-
-
 var server = http.createServer(app);
-
 
 server.listen(PORT);

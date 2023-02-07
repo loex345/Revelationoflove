@@ -14,7 +14,6 @@ async function getSeries(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
         const series = user[lesson];
-        // const series = user.what_is_truth;
         console.log(series, "series")
 
         if (!series.length) return;

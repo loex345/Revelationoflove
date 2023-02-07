@@ -135,7 +135,6 @@ const AnAncientDreamSchema = new Schema({
     }
 );
 
-
 const portfolioSchema = new Schema({
 
     user: { type: Schema.Types.ObjectId, ref: 'User' }, 
@@ -143,8 +142,6 @@ const portfolioSchema = new Schema({
         lesson: { type: Schema.Types.ObjectId, ref: 'WhatIsTruth' },
         isComplete: Boolean,
     }
-    
-
 },
     {
         timestamps: true,
@@ -172,7 +169,7 @@ const userSchema = new Schema({
     },
     portfolio: [portfolioSchema],
     what_is_truth_free: [whatIsTruthSchema],
-    An_Ancient_Dream: [AnAncientDreamSchema],
+    an_ancient_dream: [AnAncientDreamSchema],
     validLessons: Number
 
     
