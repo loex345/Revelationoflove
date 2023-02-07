@@ -171,7 +171,7 @@ const userSchema = new Schema({
         unique: true,
     },
     portfolio: [portfolioSchema],
-    what_is_truth: [whatIsTruthSchema],
+    what_is_truth_free: [whatIsTruthSchema],
     An_Ancient_Dream: [AnAncientDreamSchema],
     validLessons: Number
 
