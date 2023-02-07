@@ -78,13 +78,14 @@ const createFormHook = async (siteId) => {
 
 // (async () => {
 
-//     const ngrok = "https://8353-2600-6c50-7f-6382-ed49-81ef-7525-884.ngrok.io"
+//     const ngrok = "https://e710-2600-387-3-801-00-83.ngrok.io"
+//     const destinationURL = `${ngrok}/api/users`
 //     const siteId = process.env.SITE_ID;
 // const destinationURL = `${ngrok}/api/users/`
 
 //     // API request payload
 //     const payload = {
-//         triggerType: 'memberships_user_account_added',
+//         triggerType: 'form_submission',
 //         url: destinationURL
 //     }
 //     const newWebhook = await createWebhook(siteId, payload)
