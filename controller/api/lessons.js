@@ -9,12 +9,15 @@ module.exports = {
 
 
 async function getSeries(req, res) {
+    const lesson = convert(req.params.series)
+    console.log(lesson)
     try {
         const user = await User.findOne({ email: req.params.email });
-        const series = user.what_is_truth;
-        console.log(series[0], "series")
+        const series = user[lesson];
+        // const series = user.what_is_truth;
+        console.log(series, "series")
 
-        if (!series) return;
+        if (!series.length) return;
         res.json(series[0])
 
     } catch (err) {
@@ -24,14 +27,15 @@ async function getSeries(req, res) {
 
 async function saveAnswers(req, res) {
     console.log("Save answers", req.body, "email", req.params.email)
+    const lesson = convert(req.params.series)
     try {
         const user = await User.findOne({ email: req.params.email });
-        const series = user.what_is_truth;
+        const series = user[lesson];
 
         if (req.body) {
-            if (series.length >= 1) user.what_is_truth.pop();
+            if (series.length >= 1) user[lesson].pop();
 
-            user.what_is_truth.push(req.body)
+            user[lesson].push(req.body)
 
             user.save();
         }
@@ -44,6 +48,14 @@ async function saveAnswers(req, res) {
 async function submitForm(req, res) {
     try {
         const user = await User.findOne({ email: req.body.data.Email });
+        // const series = user[req.params.series];
+        // if (req.body) {
+        //     if (series.length >= 1) user[req.params.series].pop();
+
+        //     user[req.params.series].push(req.body)
+
+        //     user.save();
+        // }
         user.validLessons += 1;
         user.save();
         res.json(user.validLessons);
@@ -62,3 +74,13 @@ async function getLessonCount(req, res) {
         res.status(400).json(err)
     }
 }
+
+
+function convert(word) {
+    let result = '';
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === '-') result += '_';
+        else result += word[i];
+    }
+    return result;
+ }

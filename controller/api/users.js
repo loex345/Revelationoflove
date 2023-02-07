@@ -60,3 +60,12 @@ const updateUser = async (user) => {
     console.log(updateUser)
     return updatedUser.json()
 }
+
+function convert(word) {
+    let result = '';
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === '-') result += '_';
+        else result += word[i];
+    }
+    return result;
+ }
