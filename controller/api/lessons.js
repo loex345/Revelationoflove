@@ -14,7 +14,6 @@ async function getSeries(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
         const series = user[lesson];
-        // const series = user.what_is_truth;
         console.log(series, "series")
 
         if (!series.length) return;
@@ -46,18 +45,17 @@ async function saveAnswers(req, res) {
 }
 
 async function submitForm(req, res) {
+    const lesson = convert(req.body.data.lesson)
+    console.log(req.body.data, "this lesson")
     try {
         const user = await User.findOne({ email: req.body.data.Email });
-        // const series = user[req.params.series];
-        // if (req.body) {
-        //     if (series.length >= 1) user[req.params.series].pop();
-
-        //     user[req.params.series].push(req.body)
-
-        //     user.save();
-        // }
-        user.validLessons += 1;
-        user.save();
+        const series = user[lesson];
+        console.log(series)
+        if (!series.isComplete) {
+            user.validLessons += 1;
+            series.isComplete = true;
+            user.save();
+        }
         res.json(user.validLessons);
     } catch (err) {
         res.status(400).json(err)
@@ -83,4 +81,4 @@ function convert(word) {
         else result += word[i];
     }
     return result;
- }
+}

@@ -1,6 +1,4 @@
-
 const fetch = require('node-fetch');
-const sendRequest = require('./send-request')
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 const siteId = process.env.SITE_ID;
@@ -75,21 +73,21 @@ const createFormHook = async (siteId) => {
 
 
 
+// const destinationURL = `${ngrok}/api/lessons/`
 
 // (async () => {
 
-//     const ngrok = "https://94ea-2601-602-8712-23f7-a5b2-60b2-9500-9359.ngrok.io"
-//     const destinationURL = `${ngrok}/api/lessons/`
+//     const ngrok = "https://986a-2600-6c50-7f-6382-2853-bc24-be0f-c1f5.ngrok.io"
 //     const siteId = process.env.SITE_ID;
-//     //const destinationURL = `${ngrok}/api/users/`
+//     const destinationURL = `${ngrok}/api/users/`
 
 //     // API request payload
 //     const payload = {
-//         triggerType: 'form_submission',
+//         triggerType: 'memberships_user_account_added',
 //         url: destinationURL
 //     }
 //     const newWebhook = await createWebhook(siteId, payload)
 //     console.log(newWebhook)
-// })()
+// })();
 
 

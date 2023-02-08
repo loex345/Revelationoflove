@@ -40,6 +40,7 @@ const whatIsTruthSchema = new Schema({
     'tribute': String,
     'forbidding': String,
     'perverting': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -128,6 +129,7 @@ const AnAncientDreamSchema = new Schema({
     '2-4-9-saints': String,
     '2-4-10-household': String,
     '2-1-1-end': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -135,16 +137,13 @@ const AnAncientDreamSchema = new Schema({
     }
 );
 
-
 const portfolioSchema = new Schema({
 
-    user: { type: Schema.Types.ObjectId, ref: 'User' }, 
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
     what_is_truth: {
         lesson: { type: Schema.Types.ObjectId, ref: 'WhatIsTruth' },
         isComplete: Boolean,
     }
-    
-
 },
     {
         timestamps: true,
@@ -172,10 +171,10 @@ const userSchema = new Schema({
     },
     portfolio: [portfolioSchema],
     what_is_truth_free: [whatIsTruthSchema],
-    An_Ancient_Dream: [AnAncientDreamSchema],
+    an_ancient_dream: [AnAncientDreamSchema],
     validLessons: Number
 
-    
+
 },
     {
         timestamps: true,
