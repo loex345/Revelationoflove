@@ -82,6 +82,7 @@ const AnAncientDreamSchema = new Schema({
     '2-4-9-saints': String,
     '2-4-10-household': String,
     '2-1-1-end': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {

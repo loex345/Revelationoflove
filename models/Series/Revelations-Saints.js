@@ -102,4 +102,4 @@ const RevelationsMissUniverseSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('RevelationsMissUniverseSchema', RevelationsMissUniverseSchema);
+module.exports = mongoose.model('RevelationsMissUniverse', RevelationsMissUniverseSchema);

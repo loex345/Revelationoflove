@@ -33,4 +33,4 @@ const theChurchesGreatestNeedSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('theChurchesGreatestNeedSchema', theChurchesGreatestNeedSchema);
+module.exports = mongoose.model('theChurchesGreatestNeed', theChurchesGreatestNeedSchema);

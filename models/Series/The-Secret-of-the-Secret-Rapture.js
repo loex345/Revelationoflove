@@ -76,4 +76,4 @@ const revelationsEternalSignofLoveSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('revelationsEternalSignofLoveSchema', revelationsEternalSignofLoveSchema);
+module.exports = mongoose.model('revelationsEternalSignofLove', revelationsEternalSignofLoveSchema);

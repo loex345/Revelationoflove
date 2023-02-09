@@ -54,4 +54,4 @@ const ANewYouSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('ANewYouSchema', ANewYouSchema);
+module.exports = mongoose.model('ANewYou', ANewYouSchema);

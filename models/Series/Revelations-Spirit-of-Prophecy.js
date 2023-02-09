@@ -40,4 +40,4 @@ const RevelationsSpiritofProphecySchema = new Schema({
 );
 
 
-module.exports = mongoose.model('RevelationsSpiritofProphecySchema ', RevelationsSpiritofProphecySchema );
+module.exports = mongoose.model('RevelationsSpiritofProphecy', RevelationsSpiritofProphecySchema );

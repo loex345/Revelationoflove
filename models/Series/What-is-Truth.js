@@ -36,6 +36,11 @@ const whatIsTruthSchema = new Schema({
     "1-7-7-light": String,
     "1-7-8-dawn": String,
     "1-7-9-arise": String,
+    'Christ': String,
+    'tribute': String,
+    'forbidding': String,
+    'perverting': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {

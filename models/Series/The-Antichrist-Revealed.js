@@ -38,4 +38,4 @@ const theAntichristRevealedSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('theAntichristRevealedSchema', theAntichristRevealedSchema);
+module.exports = mongoose.model('theAntichristRevealed', theAntichristRevealedSchema);

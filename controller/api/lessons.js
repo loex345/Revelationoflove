@@ -10,13 +10,12 @@ module.exports = {
 
 async function getSeries(req, res) {
     const lesson = convert(req.params.series)
-    console.log(lesson)
     try {
         const user = await User.findOne({ email: req.params.email });
         const series = user[lesson];
-        console.log(series, "series")
 
         if (!series.length) return;
+        console.log(series[0].isComplete, "iscomplete")
         res.json(series[0])
 
     } catch (err) {
@@ -25,54 +24,60 @@ async function getSeries(req, res) {
 }
 
 async function saveAnswers(req, res) {
-    console.log("Save answers", req.body, "email", req.params.email)
-    const lesson = convert(req.params.series)
+    console.log("save answers functionality", req.body);
+    const lesson = convert(req.params.series);
+    let isComplete = false;
     try {
         const user = await User.findOne({ email: req.params.email });
         const series = user[lesson];
+        if (series[0].isComplete) isComplete = true;
 
         if (req.body) {
             if (series.length >= 1) user[lesson].pop();
 
-            user[lesson].push(req.body)
+            user[lesson].push(req.body);
+            
+            if (isComplete) user[lesson][0].isComplete = true;
 
             user.save();
         }
-        res.json(series[0])
+        res.json(series[0]);
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json(err);
     }
 }
 
 async function submitForm(req, res) {
-    const lesson = convert(req.body.data.lesson)
-    console.log(req.body.data, "this lesson")
+
+    const lesson = convert(req.body.data.lesson);
+
+    console.log("from submitted - backend", lesson);
+
     try {
         const user = await User.findOne({ email: req.body.data.Email });
-        const series = user[lesson];
-        console.log(series)
-        if (!series.isComplete) {
+       
+        if (user[lesson][0].isComplete === false) {
             user.validLessons += 1;
-            series.isComplete = true;
-            user.save();
+            user[lesson][0].isComplete = true;
         }
+
+        await user.save();
+
         res.json(user.validLessons);
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json(err);
     }
 }
-
 
 async function getLessonCount(req, res) {
     try {
         const user = await User.findOne({ email: req.params.email });
-        console.log(user.validLessons, "valid lesson increment")
+        console.log(user.validLessons, "valid lesson increment");
         res.json(user.validLessons);
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json(err);
     }
 }
-
 
 function convert(word) {
     let result = '';

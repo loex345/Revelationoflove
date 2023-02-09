@@ -32,4 +32,4 @@ const theUSAinBibleSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('theUSAinBibleSchema', theUSAinBibleSchema);
+module.exports = mongoose.model('theUSAinBible', theUSAinBibleSchema);

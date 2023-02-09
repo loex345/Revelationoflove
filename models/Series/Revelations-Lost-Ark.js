@@ -60,4 +60,4 @@ const RevelationsLostArkSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('RevelationsLostArkSchema', RevelationsLostArkSchema);
+module.exports = mongoose.model('RevelationsLostArk', RevelationsLostArkSchema);

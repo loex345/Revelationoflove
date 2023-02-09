@@ -75,4 +75,4 @@ const RevelationsForgottenDaySchema = new Schema({
 );
 
 
-module.exports = mongoose.model('RevelationsForgottenDaySchema', RevelationsForgottenDaySchema );
+module.exports = mongoose.model('RevelationsForgottenDay', RevelationsForgottenDaySchema );
