@@ -1,4 +1,5 @@
 const User = require('../../models/users');
+const Portfolio = require('../../models/portfolio');
 
 module.exports = {
     signUp,
