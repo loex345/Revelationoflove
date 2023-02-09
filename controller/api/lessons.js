@@ -12,7 +12,8 @@ async function getSeries(req, res) {
     const lesson = convert(req.params.series)
     try {
         const user = await User.findOne({ email: req.params.email });
-        const series = user[lesson];
+        const portfolio = await Portfolio.findOne({ user: user._id });
+        const series = portfolio[lesson];
 
         if (!series.length) return;
         console.log(series[0].isComplete, "iscomplete")
@@ -36,7 +37,7 @@ async function saveAnswers(req, res) {
             if (series.length >= 1) user[lesson].pop();
 
             user[lesson].push(req.body);
-            
+
             if (isComplete) user[lesson][0].isComplete = true;
 
             user.save();
@@ -55,7 +56,7 @@ async function submitForm(req, res) {
 
     try {
         const user = await User.findOne({ email: req.body.data.Email });
-       
+
         if (user[lesson][0].isComplete === false) {
             user.validLessons += 1;
             user[lesson][0].isComplete = true;
