@@ -1115,6 +1115,7 @@ for (let id = 0; id < allInputEL.length; id++) {
 function isCorrect(e) {
     //take information from the target
     console.log(e.target.id, 'Yes I am here')
+  
     if (e.target.id in correctObj) {
         console.log(e.target.value, "value")
         if (e.target.value === '') {
