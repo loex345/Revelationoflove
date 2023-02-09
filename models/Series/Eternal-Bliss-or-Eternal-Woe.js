@@ -66,4 +66,4 @@ const EternalBlissorEternalWoeSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('EternalBlissorEternalWoeSchema', EternalBlissorEternalWoeSchema);
+module.exports = mongoose.model('EternalBlissorEternalWoe', EternalBlissorEternalWoeSchema);

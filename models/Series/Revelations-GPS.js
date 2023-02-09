@@ -25,4 +25,4 @@ const RevelationsGPsSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('RevelationsGPSchema', RevelationsGPsSchema);
+module.exports = mongoose.model('RevelationsGPS', RevelationsGPsSchema);

@@ -1105,7 +1105,7 @@ let correctObj = {
 
 //find all ids
 for (let id = 0; id < allInputEL.length; id++) {
-    console.log(allInputEL[id].id)
+    // console.log(allInputEL[id].id)
     allInputEL[id].addEventListener("click", isCorrect, {
     })
 

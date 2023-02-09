@@ -82,4 +82,4 @@ const IsraelinBibleProphecySchema = new Schema({
 );
 
 
-module.exports = mongoose.model('IsraelinBibleProphecySchema', IsraelinBibleProphecySchema);
+module.exports = mongoose.model('IsraelinBibleProphecy', IsraelinBibleProphecySchema);

@@ -66,4 +66,4 @@ const theLoudestAlarmClockSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('theLoudestAlarmClockSchema', theLoudestAlarmClockSchema);
+module.exports = mongoose.model('theLoudestAlarmClock', theLoudestAlarmClockSchema);

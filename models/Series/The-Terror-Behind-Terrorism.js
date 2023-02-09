@@ -75,4 +75,4 @@ const TheTerrorBehindTerrorismSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('TheTerrorBehindTerrorismSchema', TheTerrorBehindTerrorismSchema);
+module.exports = mongoose.model('TheTerrorBehindTerrorism', TheTerrorBehindTerrorismSchema);

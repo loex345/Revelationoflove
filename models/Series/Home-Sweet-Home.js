@@ -82,4 +82,4 @@ const homeSweetHomeSchema = new Schema({
 );
 
 
-module.exports = mongoose.model('homeSweetHomeSchema', homeSweetHomeSchema);
+module.exports = mongoose.model('homeSweetHome', homeSweetHomeSchema);
