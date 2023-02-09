@@ -1,5 +1,4 @@
 const User = require('../../models/users');
-const Portfolio = require('../../models/portfolio');
 
 module.exports = {
     getSeries,
@@ -13,8 +12,7 @@ async function getSeries(req, res) {
     const lesson = convert(req.params.series)
     try {
         const user = await User.findOne({ email: req.params.email });
-        const portfolio = await Portfolio.findOne({ user: user._id });
-        const series = portfolio[lesson];
+        const series = user[lesson];
 
         if (!series.length) return;
         console.log(series[0].isComplete, "iscomplete")
@@ -33,6 +31,7 @@ async function saveAnswers(req, res) {
     
     try {
         const user = await User.findOne({ email: req.params.email });
+
         const portfolio = await Portfolio.findOne({ user: user._id });
         const series = portfolio[lesson];
         console.log(user, portfolio)
@@ -45,8 +44,8 @@ async function saveAnswers(req, res) {
             portfolio[lesson].push(req.body);
             
             if (isComplete) portfolio[lesson][0].isComplete = true;
-            
-        }
+
+        const series = user[lesson];
         await portfolio.save();
         await user.save();
         console.log(series,lesson)
@@ -64,14 +63,12 @@ async function submitForm(req, res) {
 
     try {
         const user = await User.findOne({ email: req.body.data.Email });
-        const portfolio = await Portfolio.findOne({ user: user._id });
 
-        if (portfolio[lesson][0].isComplete === false) {
+        if (user[lesson][0].isComplete === false) {
             user.validLessons += 1;
-            portfolio[lesson][0].isComplete = true;
+            user[lesson][0].isComplete = true;
         }
 
-        await portfolio.save();
         await user.save();
 
         res.json(user.validLessons);
