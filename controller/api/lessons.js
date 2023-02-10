@@ -26,27 +26,30 @@ async function getSeries(req, res) {
 }
 
 async function saveAnswers(req, res) {
-    console.log("save answers functionality", req.body);
-    const lesson = convert(req.params.series);
+    console.log(req.params)
+    // console.log("save answers functionality", req.body);
+    const lesson = convert(req.params.series)
     let isComplete = false;
-
+    
     try {
         const user = await User.findOne({ email: req.params.email });
         const portfolio = await Portfolio.findOne({ user: user._id });
         const series = portfolio[lesson];
-
-        if (series[0].isComplete) isComplete = true;
-
+        console.log(user, portfolio)
+        
+        if (series[0]?.isComplete) isComplete = true;
+        
         if (req.body) {
             if (series.length >= 1) portfolio[lesson].pop();
-
+            
             portfolio[lesson].push(req.body);
-
+            
             if (isComplete) portfolio[lesson][0].isComplete = true;
-
-            await portfolio.save();
-            await user.save();
+            
         }
+        await portfolio.save();
+        await user.save();
+        console.log(series,lesson)
         res.json(series[0]);
     } catch (err) {
         res.status(400).json(err);
@@ -55,7 +58,7 @@ async function saveAnswers(req, res) {
 
 async function submitForm(req, res) {
 
-    const lesson = convert(req.body.data.lesson);
+    const lesson = convert(req.body.data.lesson)
 
     console.log("from submitted - backend", lesson);
 
@@ -89,7 +92,8 @@ async function getLessonCount(req, res) {
 
 function convert(word) {
     let result = '';
-    for (let i = 0; i < word.length; i++) {
+   
+    for (let i = 0; i < word.length; i++ ) {
         if (word[i] === '-') result += '_';
         else result += word[i];
     }

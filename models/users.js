@@ -20,7 +20,7 @@ const userSchema = new Schema({
         type: String,
         unique: true,
     },
-    portfolio: { type: Schema.Types.ObjectId, ref: 'Portfolio' },
+    portfolio:{type: Schema.Types.ObjectId, ref: 'Portfolio' },
     validLessons: Number
 
 

@@ -48,5 +48,6 @@ const whatIsTruthSchema = new Schema({
     }
 );
 
+module.exports.whatIsTruthSchema = whatIsTruthSchema
 
-module.exports = mongoose.model('WhatIsTruth', whatIsTruthSchema);
+module.exports.whatIsTruthModel = mongoose.model('WhatIsTruth', whatIsTruthSchema);

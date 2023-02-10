@@ -90,5 +90,6 @@ const AnAncientDreamSchema = new Schema({
     }
 );
 
+module.exports.AnAncientDreamSchema = AnAncientDreamSchema
 
-module.exports = mongoose.model('AnAncientDream', AnAncientDreamSchema);
+module.exports.AnAncientDreamModel = mongoose.model('AnAncientDream', AnAncientDreamSchema);
