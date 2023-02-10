@@ -31,11 +31,13 @@ const theAntichristRevealedSchema = new Schema({
     '10-3-16-laws': String,
     '10-3-17-world': String,
     '10-3-18-all': String,
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.theAntichristRevealedSchema = theAntichristRevealedSchema
 
-module.exports = mongoose.model('theAntichristRevealed', theAntichristRevealedSchema);
+module.exports.theAntichristRevealedModel = mongoose.model('theAntichristRevealed', theAntichristRevealedSchema);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const IsraelinBibleProphecySchema = new Schema({
+const israelinBibleProphecySchema = new Schema({
 
     '5-1-1-enmity': String,
     '5-1-2-head': String,
@@ -75,11 +75,13 @@ const IsraelinBibleProphecySchema = new Schema({
     '5-20-3-not': String,
     '5-20-3-not-2': String,
     '5-21-1-thy': String,
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.israelinBibleProphecySchema = israelinBibleProphecySchema
 
-module.exports = mongoose.model('IsraelinBibleProphecy', IsraelinBibleProphecySchema);
+module.exports.israelinBibleProphecyModel = mongoose.model('IsraelinBibleProphecy', israelinBibleProphecySchema);

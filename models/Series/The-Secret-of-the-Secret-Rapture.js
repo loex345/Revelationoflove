@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const revelationsEternalSignofLoveSchema = new Schema({
+const theSecretOfTheSecretRaptureSchema = new Schema({
 
     '6-1-1-husband': String,
     '6-1-2-away': String,
@@ -68,12 +68,13 @@ const revelationsEternalSignofLoveSchema = new Schema({
     '6-10-7-always': String,
     '6-10-8-ready': String,
     '6-10-9-righteousness': String,
-
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.theSecretOfTheSecretRaptureSchema = theSecretOfTheSecretRaptureSchema
 
-module.exports = mongoose.model('revelationsEternalSignofLove', revelationsEternalSignofLoveSchema);
+module.exports.theSecretOfTheSecretRaptureModel = mongoose.model('theSecretOfTheSecretRapture', theSecretOfTheSecretRaptureSchema);

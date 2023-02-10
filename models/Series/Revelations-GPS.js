@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RevelationsGPsSchema = new Schema({
+const revelationsGPsSchema = new Schema({
 
 '3-1-2-bruise': String,
 '3-1-3-skull': String,
@@ -17,6 +17,7 @@ const RevelationsGPsSchema = new Schema({
 '3-5-7-men': String,
 '3-5-8-purifieth': String,
 '3-5-9-blood': String,
+isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -24,5 +25,6 @@ const RevelationsGPsSchema = new Schema({
     }
 );
 
+module.exports.revelationsGPsSchema = revelationsGPsSchema
 
-module.exports = mongoose.model('RevelationsGPS', RevelationsGPsSchema);
+module.exports.revelationsGPsModel = mongoose.model('RevelationsGPS', revelationsGPsSchema);

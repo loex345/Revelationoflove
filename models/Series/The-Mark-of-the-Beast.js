@@ -41,12 +41,13 @@ const theMarkOfTheBeastSchema = new Schema({
     '17-12-3-beast': String,
     '17-12-4-image': String,
     '17-12-5-wrath': String,
-
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.theMarkOfTheBeastSchema = theMarkOfTheBeastSchema
 
-module.exports = mongoose.model('theMarkOfTheBeast', theMarkOfTheBeastSchema);
+module.exports.theMarkOfTheBeastModel = mongoose.model('theMarkOfTheBeast', theMarkOfTheBeastSchema);

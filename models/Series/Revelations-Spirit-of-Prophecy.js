@@ -32,6 +32,7 @@ const RevelationsSpiritofProphecySchema = new Schema({
 '18-6-6-law': String,
 '18-6-7-testimony': String,
 '18-6-8-fruits': String,
+isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -39,5 +40,7 @@ const RevelationsSpiritofProphecySchema = new Schema({
     }
 );
 
+module.exports.RevelationsSpiritofProphecySchema = RevelationsSpiritofProphecySchema
 
-module.exports = mongoose.model('RevelationsSpiritofProphecy', RevelationsSpiritofProphecySchema );
+
+module.exports.RevelationsSpiritofProphecyModel = mongoose.model('RevelationsSpiritofProphecy', RevelationsSpiritofProphecySchema );

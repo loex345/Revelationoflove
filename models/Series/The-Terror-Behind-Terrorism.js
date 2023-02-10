@@ -67,6 +67,7 @@ const TheTerrorBehindTerrorismSchema = new Schema({
 '9-10-11-I': String,
 '9-10-12-bruise': String,
 '9-10-13-twice': String,
+isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -74,5 +75,6 @@ const TheTerrorBehindTerrorismSchema = new Schema({
     }
 );
 
+module.exports.TheTerrorBehindTerrorismSchema = TheTerrorBehindTerrorismSchema
 
-module.exports = mongoose.model('TheTerrorBehindTerrorism', TheTerrorBehindTerrorismSchema);
+module.exports.TheTerrorBehindTerrorismModel = mongoose.model('TheTerrorBehindTerrorism', TheTerrorBehindTerrorismSchema);

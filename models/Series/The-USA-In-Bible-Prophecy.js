@@ -24,6 +24,7 @@ const theUSAinBibleSchema = new Schema({
 '19-1-1-loved': String,
 '19-1-2-washed': String,
 '19-1-3-blood': String,
+isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -31,5 +32,6 @@ const theUSAinBibleSchema = new Schema({
     }
 );
 
+module.exports.theUSAinBibleSchema = theUSAinBibleSchema
 
-module.exports = mongoose.model('theUSAinBible', theUSAinBibleSchema);
+module.exports.theUSAinBibleModel = mongoose.model('theUSAinBible', theUSAinBibleSchema);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const EternalBlissorEternalWoeSchema = new Schema({
+const eternalBlissorEternalWoeSchema = new Schema({
 
     '13-1-1-changed': String,
     '13-1-2-incorruption': String,
@@ -65,5 +65,6 @@ const EternalBlissorEternalWoeSchema = new Schema({
     }
 );
 
+module.exports.eternalBlissorEternalWoeSchema = eternalBlissorEternalWoeSchema
 
-module.exports = mongoose.model('EternalBlissorEternalWoe', EternalBlissorEternalWoeSchema);
+module.exports.eternalBlissorEternalWoeModel = mongoose.model('EternalBlissorEternalWoe', eternalBlissorEternalWoeSchema);

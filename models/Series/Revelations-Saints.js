@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RevelationsMissUniverseSchema = new Schema({
+const revelationsSaintsSchema = new Schema({
 
     '15-1-1-multiply': String,
     '15-1-2-washed': String,
@@ -95,11 +95,13 @@ const RevelationsMissUniverseSchema = new Schema({
     '15-14-7-transformed': String,
     '15-15-1-commandments': String,
     '15-15-2-do': String,
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.revelationsSaintsSchema = revelationsSaintsSchema
 
-module.exports = mongoose.model('RevelationsMissUniverse', RevelationsMissUniverseSchema);
+module.exports.revelationsSaintsModel = mongoose.model('revelationsSaints', revelationsSaintsSchema);

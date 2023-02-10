@@ -58,6 +58,7 @@ const theLoudestAlarmClockSchema = new Schema({
     '12-11-2-hope': String,
     '12-11-2-hope-2': String,
     '12-11-4-come': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -65,5 +66,6 @@ const theLoudestAlarmClockSchema = new Schema({
     }
 );
 
+module.exports.theLoudestAlarmClockSchema = theLoudestAlarmClockSchema
 
-module.exports = mongoose.model('theLoudestAlarmClock', theLoudestAlarmClockSchema);
+module.exports.theLoudestAlarmClockModel = mongoose.model('theLoudestAlarmClock', theLoudestAlarmClockSchema);

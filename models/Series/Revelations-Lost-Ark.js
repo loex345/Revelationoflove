@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RevelationsLostArkSchema = new Schema({
+const revelationsLostArkSchema = new Schema({
 
-    '4-1-1-reward': String,
+'4-1-1-reward': String,
 '4-1-2-works': String,
 '4-1-3-reward': String,
 '4-1-4-judge': String,
@@ -52,6 +52,7 @@ const RevelationsLostArkSchema = new Schema({
 '4-13-6-liveth': String,
 '4-13-7-intercession': String,
 '4-13-8-save': String,
+isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -59,5 +60,6 @@ const RevelationsLostArkSchema = new Schema({
     }
 );
 
+module.exports.revelationsLostArkSchema = revelationsLostArkSchema
 
-module.exports = mongoose.model('RevelationsLostArk', RevelationsLostArkSchema);
+module.exports.revelationsLostArkModel = mongoose.model('RevelationsLostArk', revelationsLostArkSchema);

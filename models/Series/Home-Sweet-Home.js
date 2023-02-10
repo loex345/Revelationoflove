@@ -75,11 +75,13 @@ const homeSweetHomeSchema = new Schema({
     '21-11-6-voice': String,
     '21-11-7-melody': String,
     '21-11-8-worship': String,
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.homeSweetHomeSchema = homeSweetHomeSchema
 
-module.exports = mongoose.model('homeSweetHome', homeSweetHomeSchema);
+module.exports.homeSweetHomeModel = mongoose.model('homeSweetHome', homeSweetHomeSchema);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RevelationsMissUniverseSchema = new Schema({
+const revelationsMissUniverseSchema = new Schema({
 
     '16-1-1-you': String,
     '16-1-2-husband': String,
@@ -61,12 +61,13 @@ const RevelationsMissUniverseSchema = new Schema({
     '16-9-3-know': String,
     '16-9-4-bring': String,
     '16-9-5-one': String,
-
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.revelationsMissUniverseSchema = revelationsMissUniverseSchema
 
-module.exports = mongoose.model('RevelationsMissUniverse', RevelationsMissUniverseSchema );
+module.exports.revelationsMissUniverseModel = mongoose.model('RevelationsMissUniverse', revelationsMissUniverseSchema );

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const RevelationsForgottenDaySchema = new Schema({
+const revelationsForgottenDaySchema = new Schema({
 
     '8-1-1-God': String,
     '8-1-1-God-2': String,
@@ -67,6 +67,7 @@ const RevelationsForgottenDaySchema = new Schema({
     '8-18-1-sabbath': String,
     '8-18-2-worship': String,
     '8-19-1-hallow': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -74,5 +75,6 @@ const RevelationsForgottenDaySchema = new Schema({
     }
 );
 
+module.exports.revelationsForgottenDaySchema = revelationsForgottenDaySchema
 
-module.exports = mongoose.model('RevelationsForgottenDay', RevelationsForgottenDaySchema );
+module.exports.revelationsForgottenDayModel = mongoose.model('RevelationsForgottenDay', revelationsForgottenDaySchema );

@@ -26,11 +26,13 @@ const theChurchesGreatestNeedSchema = new Schema({
     '20-8-4-sup': String,
     '20-8-5-sit': String,
     '20-8-6-throne': String,
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.theChurchesGreatestNeedSchema = theChurchesGreatestNeedSchema
 
-module.exports = mongoose.model('theChurchesGreatestNeed', theChurchesGreatestNeedSchema);
+module.exports.theChurchesGreatestNeedModel = mongoose.model('theChurchesGreatestNeed', theChurchesGreatestNeedSchema);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const HowtoPostponeYourFuneralSchema = new Schema({
+const howtoPostponeYourFuneralSchema = new Schema({
 
     '11-1-1-rebuke': String,
     '11-1-2-chasten': String,
@@ -31,6 +31,7 @@ const HowtoPostponeYourFuneralSchema = new Schema({
     '11-5-9-transformed': String,
     '11-7-1-grace': String,
     '11-7-2-given': String,
+    isComplete: { type: Boolean, default: false }
 
 },
     {
@@ -38,5 +39,6 @@ const HowtoPostponeYourFuneralSchema = new Schema({
     }
 );
 
+module.exports.howtoPostponeYourFuneralSchema = howtoPostponeYourFuneralSchema
 
-module.exports = mongoose.model('HowtoPostponeYourFuneral', HowtoPostponeYourFuneralSchema);
+module.exports.howtoPostponeYourFuneralModel = mongoose.model('HowtoPostponeYourFuneral', HowtoPostponeYourFuneralSchema);

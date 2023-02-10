@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ANewYouSchema = new Schema({
+const aNewYouSchema = new Schema({
 
     '14-1-1-not': String,
     '14-1-2-prisoners': String,
@@ -46,12 +46,13 @@ const ANewYouSchema = new Schema({
     '14-10-3-water': String,
     '14-10-4-Spirit': String,
     '14-10-4-Spirit-2': String,
-
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
     }
 );
 
+module.exports.aNewYouSchema = aNewYouSchema
 
-module.exports = mongoose.model('ANewYou', ANewYouSchema);
+module.exports.aNewYouModel = mongoose.model('ANewYou', aNewYouSchema);
