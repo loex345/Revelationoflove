@@ -58,7 +58,7 @@ const eternalBlissorEternalWoeSchema = new Schema({
     '13-8-5-reserved': String,
     '13-9-1-eternal': String,
     '13-9-2-ashes': String,
-
+    isComplete: { type: Boolean, default: false }
 },
     {
         timestamps: true,
