@@ -1115,25 +1115,27 @@ for (let id = 0; id < allInputEL.length; id++) {
 function isCorrect(e) {
     //take information from the target
     console.log(e.target.id, 'Yes I am here')
-  
-    if (e.target.id in correctObj) {
-        console.log(e.target.value, "value")
-        if (e.target.value === '') {
-            let myId = document.getElementById(e.target.id).removeAttribute("style")
+    const currentIdx = allInputEL.indexOf(e.target)
+    console.log(currentIdx,"currentIdx")
+    let prevElement = allInputEL[ currentIdx - 1]
+        console.log(prevElement, "value")
+    if (prevElement.id in correctObj) {
+        if (prevElement.value === '') {
+            let myId = document.getElementById(prevElement.id).removeAttribute("style")
             return myId
         }
         // compare values target with key
-        if (e.target.value.toLowerCase() === correctObj[e.target.id]) {
-            let value = correctObj[e.target.id]
+        if (prevElement.value.toLowerCase() === correctObj[prevElement.id]) {
+            let value = correctObj[prevElement.id]
             // get the id  to append to
-            let myId = document.getElementById(e.target.id).setAttribute("style", "background-color:#66FF99;")
+            let myId = document.getElementById(prevElement.id).setAttribute("style", "background-color:#66FF99;")
             console.log("Yes I work", value, myId)
 
-        } else if (e.target.value.toLowerCase() !== correctObj[e.target.id]) {
-            let myId = document.getElementById(e.target.id).setAttribute("style", "background-color:#FF0000;")
+        } else if (prevElement.value.toLowerCase() !== correctObj[prevElement.id]) {
+            let myId = document.getElementById(prevElement.id).setAttribute("style", "background-color:#FF0000;")
             console.log("wrong")
         } else {
-            let myId = document.getElementById(e.target.id).removeAttribute("style")
+            let myId = document.getElementById(prevElement.id).removeAttribute("style")
         }
         //Todo make guard so that does fire until the word length is equal or more than the correct answer
     }
