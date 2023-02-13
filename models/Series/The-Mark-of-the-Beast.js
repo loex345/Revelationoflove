@@ -48,6 +48,6 @@ const theMarkOfTheBeastSchema = new Schema({
     }
 );
 
-module.exports.theMarkOfTheBeastSchema = theMarkOfTheBeastSchema
+module.exports.theMarkOfTheBeastSchema = theMarkOfTheBeastSchema;
 
 module.exports.theMarkOfTheBeastModel = mongoose.model('theMarkOfTheBeast', theMarkOfTheBeastSchema);

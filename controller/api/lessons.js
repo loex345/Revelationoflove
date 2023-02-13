@@ -1,4 +1,5 @@
 const User = require('../../models/users');
+const Portfolio = require('../../models/portfolio');
 
 module.exports = {
     getSeries,
@@ -9,10 +10,12 @@ module.exports = {
 
 
 async function getSeries(req, res) {
+    console.log("ran")
     const lesson = convert(req.params.series)
     try {
         const user = await User.findOne({ email: req.params.email });
-        const series = user[lesson];
+        const portfolio = await Portfolio.findOne({ user: user._id });
+        const series = portfolio[lesson];
 
         if (!series.length) return;
         console.log(series[0].isComplete, "iscomplete")
@@ -23,6 +26,7 @@ async function getSeries(req, res) {
     }
 }
 
+
 async function saveAnswers(req, res) {
     console.log(req.params)
     // console.log("save answers functionality", req.body);
@@ -31,7 +35,6 @@ async function saveAnswers(req, res) {
     
     try {
         const user = await User.findOne({ email: req.params.email });
-
         const portfolio = await Portfolio.findOne({ user: user._id });
         const series = portfolio[lesson];
         console.log(user, portfolio)
@@ -44,8 +47,8 @@ async function saveAnswers(req, res) {
             portfolio[lesson].push(req.body);
             
             if (isComplete) portfolio[lesson][0].isComplete = true;
-
-        const series = user[lesson];
+            
+        }
         await portfolio.save();
         await user.save();
         console.log(series,lesson)
@@ -63,12 +66,14 @@ async function submitForm(req, res) {
 
     try {
         const user = await User.findOne({ email: req.body.data.Email });
+        const portfolio = await Portfolio.findOne({ user: user._id });
 
-        if (user[lesson][0].isComplete === false) {
+        if (portfolio[lesson][0].isComplete === false) {
             user.validLessons += 1;
-            user[lesson][0].isComplete = true;
+            portfolio[lesson][0].isComplete = true;
         }
 
+        await portfolio.save();
         await user.save();
 
         res.json(user.validLessons);

@@ -39,6 +39,6 @@ const howtoPostponeYourFuneralSchema = new Schema({
     }
 );
 
-module.exports.howtoPostponeYourFuneralSchema = howtoPostponeYourFuneralSchema
+module.exports.howtoPostponeYourFuneralSchema = howtoPostponeYourFuneralSchema;
 
-module.exports.howtoPostponeYourFuneralModel = mongoose.model('HowtoPostponeYourFuneral', HowtoPostponeYourFuneralSchema);
+module.exports.howtoPostponeYourFuneralModel = mongoose.model('HowtoPostponeYourFuneral', howtoPostponeYourFuneralSchema);
