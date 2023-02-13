@@ -10,6 +10,7 @@ module.exports = {
 
 
 async function getSeries(req, res) {
+    console.log("ran")
     const lesson = convert(req.params.series)
     try {
         const user = await User.findOne({ email: req.params.email });
@@ -24,6 +25,7 @@ async function getSeries(req, res) {
         res.status(400).json(err)
     }
 }
+
 
 async function saveAnswers(req, res) {
     console.log(req.params)

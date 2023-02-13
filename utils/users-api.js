@@ -57,12 +57,10 @@ const createWebhook = async (siteId, payload) => {
 
 
 
-// const destinationURL = `${ngrok}/api/users/`
-// triggerType: 'memberships_user_account_added',
 
 // (async () => {
     
-//         const ngrok = "https://7ff1-2601-203-4202-70e0-9d69-f6db-4eeb-217d.ngrok.io"
+//         const ngrok = "https://cbf1-2600-6c50-7f-6382-100e-fb79-aa4f-ab91.ngrok.io"
 //         const siteId = process.env.SITE_ID;
 //     const destinationURL = `${ngrok}/api/users`
     
@@ -76,12 +74,9 @@ const createWebhook = async (siteId, payload) => {
 // })();
 
 
-// const destinationURL = `${ngrok}/api/users/`
-// triggerType: 'memberships_user_account_added',
-
 // (async () => {
     
-//         const ngrok = "https://7ff1-2601-203-4202-70e0-9d69-f6db-4eeb-217d.ngrok.io"
+//         const ngrok = "https://cbf1-2600-6c50-7f-6382-100e-fb79-aa4f-ab91.ngrok.io"
 //         const siteId = process.env.SITE_ID;
 //     const destinationURL = `${ngrok}/api/lessons/`
     
