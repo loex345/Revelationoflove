@@ -61,7 +61,7 @@ const createWebhook = async (siteId, payload) => {
 // (async () => {
     
 //         const ngrok = "https://cbf1-2600-6c50-7f-6382-100e-fb79-aa4f-ab91.ngrok.io"
-//         const siteId = process.env.SITE_ID;
+//         const siteId = process.env.SITEID;
 //     const destinationURL = `${ngrok}/api/users`
     
 //         // API request payload
@@ -77,7 +77,7 @@ const createWebhook = async (siteId, payload) => {
 // (async () => {
     
 //         const ngrok = "https://cbf1-2600-6c50-7f-6382-100e-fb79-aa4f-ab91.ngrok.io"
-//         const siteId = process.env.SITE_ID;
+//         const siteId = process.env.SITEID;
 //     const destinationURL = `${ngrok}/api/lessons/`
     
 //         // API request payload
