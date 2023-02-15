@@ -10,7 +10,6 @@ module.exports = {
 
 
 async function getSeries(req, res) {
-    console.log("ran")
     const lesson = convert(req.params.series)
     try {
         const user = await User.findOne({ email: req.params.email });
@@ -67,7 +66,7 @@ async function submitForm(req, res) {
     try {
         const user = await User.findOne({ email: req.body.data.Email });
         const portfolio = await Portfolio.findOne({ user: user._id });
-
+        console.log(lesson, "this is the lesson")
         if (portfolio[lesson][0].isComplete === false) {
             user.validLessons += 1;
             portfolio[lesson][0].isComplete = true;
