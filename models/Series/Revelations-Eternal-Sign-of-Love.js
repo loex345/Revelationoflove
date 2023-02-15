@@ -52,6 +52,7 @@ const revelationEternalSignofLoveSchema = new Schema({
 '7-8-3-sinners': String,
 '7-8-4-gospel': String,
 '7-9-1-commandments': String,
+isComplete: { type: Boolean, default: false }
 
 },
     {
