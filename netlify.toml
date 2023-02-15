@@ -1,8 +1,0 @@
-[build]
-    command="node server.js"
-
-
-[[redirects]] 
-  to=”/.netlify/command/api:splat” 
-  from=”/*” 
-  status=200
