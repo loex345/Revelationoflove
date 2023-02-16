@@ -16,6 +16,7 @@ const aNewYouSchema = new Schema({
     '14-4-2-righteousness': String,
     '14-4-3-up': String,
     '14-4-4-water': String,
+    '14-5-4-sins': String,
     '15-5-1-Buried': String,
     '14-5-2-risen': String,
     '14-5-3-dead': String,
@@ -46,6 +47,7 @@ const aNewYouSchema = new Schema({
     '14-10-3-water': String,
     '14-10-4-Spirit': String,
     '14-10-4-Spirit-2': String,
+    '14-10-5-God': String,
     isComplete: { type: Boolean, default: false }
 },
     {

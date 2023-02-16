@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const theUSAinBibleSchema = new Schema({
 
+'19-1-1-loved': String,
 '19-3-1-sea': String,
 '19-3-2-heads': String,
 '19-3-3-horns': String,

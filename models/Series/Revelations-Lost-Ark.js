@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const revelationsLostArkSchema = new Schema({
 
+'4-1-1-reward-Reward': String,
 '4-1-1-reward': String,
 '4-1-2-works': String,
 '4-1-3-reward': String,

@@ -74,6 +74,7 @@ const israelinBibleProphecySchema = new Schema({
     '5-20-2-world': String,
     '5-20-3-not': String,
     '5-20-3-not-2': String,
+    '5-20-3-King': String,
     '5-21-1-thy': String,
     isComplete: { type: Boolean, default: false }
 },

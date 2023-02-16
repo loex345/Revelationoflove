@@ -28,6 +28,7 @@ const TheTerrorBehindTerrorismSchema = new Schema({
 '9-4-2-war': String,
 '9-4-1-woman-3': String,
 '9-4-1-commandments': String,
+'9-4-4-love': String,
 '9-5-1-truth': String,
 '9-5-2-mercy': String,
 '9-5-3-knowledge': String,
@@ -58,6 +59,7 @@ const TheTerrorBehindTerrorismSchema = new Schema({
 '9-10-2-Lamb': String,
 '9-10-3-testimony': String,
 '9-10-3-testimony-2': String,
+'9-10-4-blood': String,
 '9-10-5-boldly': String,
 '9-10-6-mercy': String,
 '9-10-7-grace': String,
@@ -67,6 +69,7 @@ const TheTerrorBehindTerrorismSchema = new Schema({
 '9-10-11-I': String,
 '9-10-12-bruise': String,
 '9-10-13-twice': String,
+'9-10-14-more': String,
 isComplete: { type: Boolean, default: false }
 
 },

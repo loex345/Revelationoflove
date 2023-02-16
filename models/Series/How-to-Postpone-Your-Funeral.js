@@ -14,6 +14,7 @@ const howtoPostponeYourFuneralSchema = new Schema({
     '11-1-9-lusts': String,
     '11-1-10-righteously': String,
     '11-2-5-godly': String,
+    '11-2-1-saved': String,
     '11-3-1-health': String,
     '11-4-1-wicked': String,
     '11-4-2-foolish': String,
@@ -31,6 +32,8 @@ const howtoPostponeYourFuneralSchema = new Schema({
     '11-5-9-transformed': String,
     '11-7-1-grace': String,
     '11-7-2-given': String,
+    '11-7-3-find': String,
+    "11-13-1-swine-s": String,
     isComplete: { type: Boolean, default: false }
 
 },

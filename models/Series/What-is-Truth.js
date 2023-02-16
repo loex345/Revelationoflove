@@ -10,6 +10,7 @@ const whatIsTruthSchema = new Schema({
     "1-2-2-witness": String,
     "1-2-3-truth": String,
     "1-3-2-Herod-s": String,
+    "1-3-3-Herod": String,
     "1-3-3-miracle": String,
     "1-3-3-miracle-2": String,
     "1-3-4-sent": String,

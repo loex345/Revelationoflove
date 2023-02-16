@@ -57,6 +57,7 @@ const theLoudestAlarmClockSchema = new Schema({
     '12-11-1-saints': String,
     '12-11-2-hope': String,
     '12-11-2-hope-2': String,
+    '12-11-3-evil': String,
     '12-11-4-come': String,
     isComplete: { type: Boolean, default: false }
 
