@@ -30,6 +30,7 @@ const theMarkOfTheBeastSchema = new Schema({
     '17-6-2-sing': String,
     '17-6-3-sabbaths': String,
     '17-6-4-sign': String,
+    '17-6-4-sign-2': String,
     '17-6-4-1-sign': String,
     '17-7-1-times': String,
     '17-7-1-times-2': String,
