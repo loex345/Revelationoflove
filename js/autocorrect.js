@@ -1,6 +1,6 @@
 //target all inputs
 const allInputEL = document.querySelectorAll("input")
-
+//v.02192023
 //correct answers
 let correctObj = {
     '1-1-5-A': 'a',
@@ -135,7 +135,7 @@ let correctObj = {
     '3-5-3-washed': 'washed',
     '3-5-5-prayer': 'prayer',
     '3-5-6-light': 'light',
-    '3-5-6-1-light': 'light',
+    '3-5-6-1-light-2': 'light',
     '3-5-7-men': 'men',
     '3-5-8-purifieth': 'purifieth',
     '3-5-9-blood': 'blood',
