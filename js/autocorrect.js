@@ -59,7 +59,6 @@ let correctObj = {
     '2-1-18-wine': 'wine',
     '2-1-19-wisdom': 'wisdom',
     '2-2-20-ten': 'ten',
-    '2-1-10-hearts-2': 'hearts',
     '2-1-10-Hearts-3': 'hearts',
     '2-2-1-magicians': 'magicians',
     '2-2-2-astrologers': 'astrologers',
@@ -68,7 +67,7 @@ let correctObj = {
     '2-2-5-man': 'man',
     '2-2-6-none': 'none',
     '2-2-7-not': 'not',
-    '2-2-7-Dark': 'dark',
+    '2-2-7-dark': 'dark',
     '2-2-8-desire': 'desire',
     '2-2-9-mercies': 'mercies',
     '2-2-10-thank': 'thank',
@@ -106,7 +105,7 @@ let correctObj = {
     '2-3-21-Lord': 'lord',
     '2-3-22-reign': 'reign',
     '2-3-22-reign-3': 'reign',
-    '2-3-22-Christ':'christ',
+    '2-3-22-Christ': 'christ',
     '2-3-23-ever': 'ever',
     '2-3-24-God': 'god',
     '2-3-25-gods': 'gods',
@@ -1137,7 +1136,6 @@ let correctObj = {
 
 //find all ids
 for (let id = 0; id < allInputEL.length; id++) {
-    // console.log(allInputEL[id].id)
     allInputEL[id].addEventListener("focusout", isCorrect, {
     })
 
@@ -1146,27 +1144,26 @@ for (let id = 0; id < allInputEL.length; id++) {
 
 function isCorrect(e) {
     //take information from the target
-    console.log(e.target.id, 'Yes I am here')
+    let myId;
     if (e.target.id in correctObj) {
-        console.log(e.target.value, "value")
-        if (e.target.value === '') {
-            let myId = document.getElementById(e.target.id).removeAttribute("style")
-            return myId
-        }
+
+        // if (e.target.value === '') {
+        //     myId = document.getElementById(e.target.id).removeAttribute("style")
+        //     return myId
+        // }
         // compare values target with key
         if (e.target.value.toLowerCase() === correctObj[e.target.id]) {
             let value = correctObj[e.target.id]
             // get the id  to append to
-            let myId = document.getElementById(e.target.id).setAttribute("style", "background-color:#66FF99;")
-            console.log("Yes I work", value, myId)
+            myId = document.getElementById(e.target.id).setAttribute("style", "background-color:#66FF99;")
+
 
         } else if (e.target.value.toLowerCase() !== correctObj[e.target.id]) {
-            let myId = document.getElementById(e.target.id).setAttribute("style", "background-color:#FF0000;")
+            myId = document.getElementById(e.target.id).setAttribute("style", "background-color:#FF0000;")
             console.log("wrong")
         } else {
-            let myId = document.getElementById(e.target.id).removeAttribute("style")
+            myId = document.getElementById(e.target.id).removeAttribute("style")
         }
-        //Todo make guard so that does fire until the word length is equal or more than the correct answer
     }
 
 }
